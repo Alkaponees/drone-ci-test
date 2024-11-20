@@ -5,11 +5,7 @@ name: serhii-vysotskyi
 steps:
   - name: setup
     commands:
-      - if docker --version &> /dev/null; then
-          echo "Docker is installed.";
-        else
-          echo "Docker is not installed. Start installation" && pwd;
-        fi
+      - bash check_docker.sh
 
   - name: build
     commands:
