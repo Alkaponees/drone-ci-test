@@ -3,13 +3,13 @@ type: exec
 name: serhii-vysotskyi
 
 steps:
-  - name: setup
+  - name: Check installation Docker
     commands:
       - bash check_docker.sh
 
-  - name: build
+  - name: Check installation Docker Compose
     commands:
-      - echo "Building the project"
+      - bash check_docker_compose.sh
 
   - name: test
     commands:
