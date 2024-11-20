@@ -6,6 +6,7 @@ steps:
   - name: setup
     commands:
       - echo "Setting up the environment"
+      - whoami
 
   - name: build
     commands:
