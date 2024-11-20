@@ -7,6 +7,7 @@ steps:
     commands:
       - echo "Setting up the environment"
       - whoami
+      - apt update
 
   - name: build
     commands:
