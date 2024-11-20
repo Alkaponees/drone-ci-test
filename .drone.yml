@@ -1,10 +1,21 @@
 #Create test drone build
-name: drone-test
 kind: pipeline
-type: docker
+type: exec
+name: serhii-vysotskyi
 
 steps:
-- name: test
-  image: alpine
-  commands:
-  - echo "It worked!"
+  - name: setup
+    commands:
+      - echo "Setting up the environment"
+
+  - name: build
+    commands:
+      - echo "Building the project"
+      - make build
+
+  - name: test
+    commands:
+      - echo "Running tests"
+      - make test
+node:
+  location: remote
