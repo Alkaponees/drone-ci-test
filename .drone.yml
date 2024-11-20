@@ -10,7 +10,13 @@ steps:
   - name: Check installation Docker Compose
     commands:
       - bash check_docker_compose.sh
-
-  - name: test
+  - name: Stop all docker containers
     commands:
-      - echo "Running tests"
+      - 
+  - name: Pull docker images
+    commands:
+      - docker pull nginx:1.27.2
+
+  - name: Start docker container
+    commands:
+      - docker run -d -name=web-server -p 80:80 nginx:1.27.2
