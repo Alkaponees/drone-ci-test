@@ -8,8 +8,8 @@ steps:
       - if command -v docker &> /dev/null; then
           echo "Docker is installed."
         else
-          "Docker is not installed. Start installation "
-           pwd
+          echo "Docker is not installed. Start installation "
+          pwd
         fi
 
   - name: build
