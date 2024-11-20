@@ -19,4 +19,4 @@ steps:
 
   - name: Start docker container
     commands:
-      - docker run -d -name=web-server -p 80:80 nginx:1.27.2
+      - docker run -d --name=web-server -p 80:80 nginx:1.27.2
