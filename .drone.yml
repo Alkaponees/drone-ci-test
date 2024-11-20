@@ -12,7 +12,9 @@ steps:
       - bash check_docker_compose.sh
   - name: Stop all docker containers
     commands:
-      - 
+      - docker stop $(docker ps -a -q)
+      - docker rm $(docker ps -a -q)
+
   - name: Pull docker images
     commands:
       - docker pull nginx:1.27.2
