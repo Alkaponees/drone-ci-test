@@ -10,11 +10,16 @@ steps:
   - name: Check installation Docker Compose
     commands:
       - bash check_docker_compose.sh
+  
   - name: Stop all docker containers
     commands:
       - docker stop $(docker ps -a -q)
       - docker rm $(docker ps -a -q)
-
+  
+  - name: Remove all unused images
+    commands:
+      - docker image prune -a
+  
   - name: Pull docker images
     commands:
       - docker pull nginx:1.27.2
