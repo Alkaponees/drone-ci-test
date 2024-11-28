@@ -13,8 +13,8 @@ steps:
   
   - name: Stop all docker containers
     commands:
-      - docker stop $(docker ps -a -q)
-      - docker rm $(docker ps -a -q)
+      - docker ps -q | xargs -r docker stop
+      - docker ps -a -q | xargs -r docker rm
   
   - name: Remove all unused images
     commands:
