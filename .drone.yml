@@ -18,7 +18,7 @@ steps:
   
   - name: Remove all unused images
     commands:
-      - docker image prune -a
+      - docker image prune -a -f
   
   - name: Pull docker images
     commands:
